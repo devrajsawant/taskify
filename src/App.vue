@@ -53,7 +53,7 @@ const completedTasks = computed(
   >
     <div class="w-full">
       <!-- Title -->
-      <h1 class="text-4xl mb-6 text-neutral-200">Taskify <span class="text-sm ml-[-15px] text-neutral-500 tracking-tighter">// minimalist daily to do list</span></h1>
+      <h1 class="text-4xl mb-6 text-neutral-200">Taskify</h1>
 
       <!-- Input (minimal) -->
       <input
