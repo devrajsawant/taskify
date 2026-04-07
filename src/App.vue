@@ -49,32 +49,32 @@ const completedTasks = computed(
 
 <template>
   <div
-    class="min-h-screen w-full bg-neutral-950 text-neutral-200 flex justify-center px-10 py-10 font-mono"
+    class="min-h-screen w-full bg-neutral-950 text-neutral-200 flex justify-center sm:px-10 px-5 py-10 font-mono"
   >
     <div class="w-full">
       <!-- Title -->
-      <h1 class="text-4xl mb-6 text-neutral-400">Tasks</h1>
+      <h1 class="text-4xl mb-6 text-neutral-200">Taskify <span class="text-sm ml-[-15px] text-neutral-500 tracking-tighter">// minimalist daily to do list</span></h1>
 
       <!-- Input (minimal) -->
       <input
         v-model="input"
         @keyup.enter="addTask"
-        placeholder="type and press enter..."
-        class="w-xl text-3xl size-20 bg-transparent pb-2 outline-none placeholder-neutral-600"
+        placeholder="type task and press enter..."
+        class="bg-transparent w-full sm:w-xl text-xl sm:text-3xl size-20 pb-2 outline-none placeholder-neutral-600"
       />
 
       <!-- Stats -->
       <div
         v-if="tasks.length > 0"
-        class="flex justify-between max-w-xl pe-2 text-md sm:text-md text-neutral-500 mt-4"
+        class="flex justify-between max-w-xl pe-2  text-neutral-500 mt-4"
       >
-        <div class="flex gap-5">
-          <span>total: {{ totalTasks }}</span>
-          <span>completed: {{ completedTasks }}</span>
+        <div class="flex sm:gap-5 gap-3 text-md">
+          <span>total: <span class="text-white">{{ totalTasks }}</span></span>
+          <span>completed: <span class="text-white">{{ completedTasks }}</span></span>
         </div>
         <button
           @click="clearAllTasks"
-          class="text-red-800 hover:text-red-600 ml-20 cursor-pointer"
+          class="text-red-800 hover:text-red-600 ml-4 sm:ml-20 cursor-pointer text-md text-start"
         >
           Delete All
         </button>
