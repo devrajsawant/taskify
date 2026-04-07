@@ -1,7 +1,17 @@
 <script setup>
 import { computed, onMounted, ref, watch } from "vue";
 import TaskItem from "./components/taskItem.vue";
+import { useHead } from "@vueuse/head";
 
+useHead({
+  title: "Taskify - Minimalist Todo App",
+  meta: [
+    {
+      name: "description",
+      content: "A minimal to do list",
+    },
+  ],
+});
 const input = ref("");
 const tasks = ref([]);
 
@@ -66,11 +76,16 @@ const completedTasks = computed(
       <!-- Stats -->
       <div
         v-if="tasks.length > 0"
-        class="flex justify-between max-w-xl pe-2  text-neutral-500 mt-4"
+        class="flex justify-between max-w-xl pe-2 text-neutral-500 mt-4"
       >
         <div class="flex sm:gap-5 gap-3 text-md">
-          <span>total: <span class="text-white">{{ totalTasks }}</span></span>
-          <span>completed: <span class="text-white">{{ completedTasks }}</span></span>
+          <span
+            >total: <span class="text-white">{{ totalTasks }}</span></span
+          >
+          <span
+            >completed:
+            <span class="text-white">{{ completedTasks }}</span></span
+          >
         </div>
         <button
           @click="clearAllTasks"
