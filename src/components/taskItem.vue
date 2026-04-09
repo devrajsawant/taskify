@@ -5,7 +5,7 @@ defineEmits(["delete", "toggle"]); // defineEmits take call back function, child
 
 <template>
   <li
-    class="group flex items-center justify-between px-2 py-1 rounded-md hover:bg-neutral-800 transition"
+    class="group flex items-start justify-between px-2 py-1 rounded-md hover:bg-neutral-800 transition"
   >
     <!-- Left: task -->
     <span
@@ -28,11 +28,11 @@ defineEmits(["delete", "toggle"]); // defineEmits take call back function, child
     </span>
 
     <div
-      class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition"
+      class="flex items-center gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition"
     >
       <button
         @click="$emit('delete', index)"
-        class="text-neutral-500 hover:text-red-400 cursor-pointer"
+        class="text-red-500 sm:text-neutral-500 sm:hover:text-red-400 cursor-pointer"
       >
         ✕
       </button>
